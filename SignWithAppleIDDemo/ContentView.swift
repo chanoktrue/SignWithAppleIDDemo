@@ -6,16 +6,23 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                SignInWithAppleButton(.continue) { request in
+                    
+                } onCompletion: { result in
+                    
+                }
+                .frame(height: 50)
+                .padding()
+                .cornerRadius(8)
+            }
         }
-        .padding()
+        .navigationTitle("Sign In")
     }
 }
 
